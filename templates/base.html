@@ -1,0 +1,21 @@
+<!--type html:5 then tab key to create the template-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hello Flask</title>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="{{url_for('index')}}">Home</a></li> <!--the name index has to be corespond to the def index in run.py-->
+            <li><a href="{{url_for('about')}}">About</a></li><!--the name about has to be corespond to the def about in run.py-->
+            <li><a href="{{url_for('contact')}}">Contact</a></li><!--the name "contact" has to be corespond to the "def contact" in run.py-->
+            <li><a href="{{url_for('careers')}}">Careers</a></li><!--the name "contact" has to be corespond to the "def contact" in run.py-->
+        </ul>
+    </nav>
+    {% block content%}
+    {% endblock%}
+</body>
+</html>
