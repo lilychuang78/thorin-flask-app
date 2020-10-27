@@ -8,8 +8,9 @@
 <body>
     <nav>
         <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About</a></li>
+            <li><a href="{{url_for('index')}}">Home</a></li> <!--the name "index" has to be corespond to the "def index" in run.py-->
+            <li><a href="{{url_for('about')}}">About</a></li><!--the name "about" has to be corespond to the "def about" in run.py-->
+            <li><a href="{{url_for('contact')}}">Contact</a></li><!--the name "contact" has to be corespond to the "def contact" in run.py-->
         </ul>
     </nav>
     <h1>About Page</h1>
