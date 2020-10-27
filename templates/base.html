@@ -4,10 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/clean-blog.min.css') }}"> <!--type "link:css" then tab-->
     <title>Hello Flask</title>
 </head>
 <body>
-    <nav>
+    <nav class="navbar">
         <ul>
             <li><a href="{{url_for('index')}}">Home</a></li> <!--the name index has to be corespond to the def index in run.py-->
             <li><a href="{{url_for('about')}}">About</a></li><!--the name about has to be corespond to the def about in run.py-->
