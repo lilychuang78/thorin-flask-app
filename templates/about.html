@@ -1,9 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
 
-    {% for number in list_of_numbers %} <!--use % for python statement-->
-        <p>{{ number }}</p>
-    {% endfor %} <!-- must write "endfor" to end the for loop-->
+    {{ company [1]["name"]}}
 
     <h2>{{ page_title }}</h2>
 	<p>
