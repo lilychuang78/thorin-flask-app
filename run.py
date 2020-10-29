@@ -1,8 +1,10 @@
 import os
 import json
-from flask import Flask, render_template, request
-
+from flask import Flask, render_template, request, flash
+if os.path.exists("env.py"):
+    import env    
 app = Flask(__name__)
+app.secret_key = os.environ.get("SECRET_KEY")
 
 @app.route("/")
 def index():
@@ -31,8 +33,9 @@ def about_member(member_name):
 @app.route("/contact", methods=["GET", "POST"])
 def contact():
     if request.method == "POST":
-        print(request.form.get("name")) #get only name from the form and print in the terminal, method 1
-        print(request.form ["email"]) #get only email from the form and print in the terminal, method 2
+        #print(request.form.get("name")) #get only name from the form and print in the terminal, method 1
+        #print(request.form ["email"]) #get only email from the form and print in the terminal, method 2
+        flash("Thanks {}, we have received your message.".format(request.form.get("name"))) #this is a flash message which disappears after refreshing the page
     return render_template("contact.html", page_title="Contact")
 
 
